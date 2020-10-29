@@ -1,0 +1,81 @@
+<div class="container" style="max-width: 800px">
+  <div style="background: #92CBF1;min-height: 350px;border-radius: 10px;border: 1px solid black">
+
+
+    <div class="container row">
+      <div class="col-7">
+        <div style="height: 20px"></div>
+        <div class="city">{{city}}</div>
+        <div class="city" style="color: #29464B">{{timezone}}</div>
+        <div style="height: 25px"></div>
+        <div class="container row">
+          <div class="temperature">{{temperature}}</div>
+          <img src="https://cdn3.iconfinder.com/data/icons/virtual-notebook/16/button_shape_oval-512.png"
+               style="width: 13px;height: 13px;margin-top: 0;margin-left: 5px;margin-right: 5px">
+          <div class="temperature" style="margin-left: 0">F</div>
+        </div>
+        <div style="height: 25px"></div>
+        <div class="summary">{{summary}}</div>
+      </div>
+
+      <div class="col-5">
+        <img src="{{imgLink}}" class="state">
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+
+        <div style="width: 16%" *ngIf="humidity && humidity!=0">
+          <div class="text-center">
+            <img placement="top" ngbTooltip="Humidity" class="weatherIcon"
+                 src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-16-512.png">
+            <div class="weatherInfo">{{humidity}}</div>
+          </div>
+        </div>
+
+        <div style="width: 16%" *ngIf="pressure && pressure!=0">
+          <div class="text-center">
+            <img placement="top" ngbTooltip="Pressure" class="weatherIcon"
+                 src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-25-512.png">
+            <div class="weatherInfo ">{{pressure}}</div>
+          </div>
+        </div>
+
+        <div style="width: 16%" *ngIf="windSpeed && windSpeed!=0">
+          <div class="text-center">
+            <img placement="top" ngbTooltip="WindSpeed" class="weatherIcon"
+                 src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-27-512.png">
+            <div class="weatherInfo">{{windSpeed}}</div>
+          </div>
+        </div>
+
+        <div style="width: 16%" *ngIf="visibility && visibility!=0">
+          <div class="text-center">
+            <img placement="top" ngbTooltip="Visibility" class="weatherIcon"
+                 src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-30-512.png">
+            <div class="weatherInfo">{{visibility}}</div>
+          </div>
+        </div>
+
+        <div style="width: 16%" *ngIf="cloudCover && cloudCover!=0">
+          <div class="text-center">
+            <img placement="top" ngbTooltip="CloudCover" class="weatherIcon"
+                 src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-28-512.png">
+            <div class="weatherInfo">{{cloudCover}}</div>
+          </div>
+        </div>
+
+        <div style="width: 16%" *ngIf="ozone && ozone!=0">
+          <div class="text-center">
+            <img placement="top" ngbTooltip="Ozone" class="weatherIcon"
+                 src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-24-512.png">
+            <div class="weatherInfo">{{ozone}}</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

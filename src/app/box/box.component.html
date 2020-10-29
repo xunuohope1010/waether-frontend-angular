@@ -1,0 +1,118 @@
+<div style="height: 5px"></div>
+<div class="container" style="max-width: 900px;">
+  <form
+    style="background-color: #5B87A5;color: white;min-height: 450px;border-radius: 10px;border: 1px solid black;box-shadow: 5px 5px 5px grey;"
+    (ngSubmit)="submitForm()" [formGroup]="angForm" novalidate>
+
+    <div class="text-center weatherTitle" >Weather Search</div>
+    <div class="searchBox">
+      <div class="container">
+        <div class="form-group row">
+          <label for="street" class="col-sm-2 col-form-label">
+            <div class="container row">
+              <div>Street</div>
+              <div style="color: red;font-size: 18px;margin-left: 5px">*</div>
+            </div>
+          </label>
+          <div class="col-sm-6">
+
+            <input type="text" class="form-control" id="street" placeholder="Enter Street Name"
+                   formControlName="street" style="border: 1px solid black">
+            <div
+              *ngIf="angForm.controls['street'].invalid && (angForm.controls['street'].dirty || angForm.controls['street'].touched)">
+              <div *ngIf="angForm.controls['street'].errors.required">
+                <div style="color: red">Please enter a street</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="city" class="col-sm-2 col-form-label">
+            <div class="container row">
+              <div>City</div>
+              <div style="color: red;font-size: 18px;margin-left: 5px">*</div>
+            </div>
+          </label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" id="city" placeholder="Enter City Name"
+                   [matAutocomplete]="auto" (input)="sendRequest(angForm.value.city)" formControlName="city"
+                   style="border: 1px solid black">
+            <div
+              *ngIf="angForm.controls['city'].invalid && (angForm.controls['city'].dirty || angForm.controls['city'].touched)">
+              <div *ngIf="angForm.controls['city'].errors.required">
+                <div style="color: red">Please enter a city</div>
+              </div>
+            </div>
+
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option of options" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="state" class="col-sm-2 col-form-label">
+            <div class="container row">
+              <div>State</div>
+              <div style="color: red;font-size: 18px;margin-left: 5px">*</div>
+            </div>
+          </label>
+          <div class="col-sm-5">
+
+            <select class="custom-select col-sm-9 form-control" id="state" formControlName="state">
+              <option value='' selected>Select State</option>
+              <option *ngFor="let option of stateOptions" [value]="option.Abbreviation">
+                {{option.State}}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-5">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck" (click)="location()" [checked]="enableIP">
+              <label class="form-check-label" for="gridCheck">
+                Current Location
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="container">
+            <div class="row">
+              <button type="submit" class="btn submit"
+                      [disabled]="(angForm.pristine || angForm.invalid) && !enableIP"
+                      style="border: 1px solid black;width: 105px;height: 40px;margin-left: 7px">
+                <div class="container">
+                  <div class="row"><i
+                    class="material-icons" style="color: gray">search</i>
+                    <div style="font-size: 17px;color: gray">Search</div>
+                  </div>
+                </div>
+              </button>
+              <div style="width: 20px"></div>
+              <button type="button" class="btn submit" (click)="clear()"
+                      style="border: 1px solid black;width: 95px;height: 40px;">
+                <div class="container">
+                  <div class="row"><i
+                    class="material-icons" style="color: gray">clear_all</i>
+                    <div style="font-size: 17px;color: gray">Clear</div>
+                  </div>
+                </div>
+              </button>
+            </div>
+
+          </div>
+        </div>
+        <div style="height: 30px"></div>
+      </div>
+    </div>
+
+  </form>
+
+</div>

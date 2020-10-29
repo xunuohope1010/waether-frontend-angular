@@ -1,0 +1,65 @@
+
+
+<div class="container">
+
+  <select class="custom-select col-sm-5 humidity" id="chart" name="chart" #op (change)="switch(op.value)">
+    <option value="Temperature" selected="selected">Temperature</option>
+    <option *ngFor="let option of optionsHourly" [value]="option">
+      {{option}}
+    </option>
+  </select>
+
+  <div *ngIf="op.value=='Temperature'">
+    <div style="display: block">
+
+      <canvas baseChart [datasets]="ChartData" [labels]="ChartLabels"
+              [options]="ChartOptions" [legend]="ChartLegend" [chartType]="ChartType">
+      </canvas>
+    </div>
+  </div>
+
+  <div *ngIf="op.value=='Pressure'">
+    <div style="display: block">
+
+      <canvas baseChart [datasets]="ChartData" [labels]="ChartLabels"
+              [options]="ChartOptions" [legend]="ChartLegend" [chartType]="ChartType">
+      </canvas>
+    </div>
+  </div>
+
+  <div *ngIf="op.value=='Humidity'">
+    <div style="display: block">
+
+      <canvas baseChart [datasets]="ChartData" [labels]="ChartLabels"
+              [options]="ChartOptions" [legend]="ChartLegend" [chartType]="ChartType">
+      </canvas>
+    </div>
+  </div>
+
+  <div *ngIf="op.value=='Ozone'">
+    <div style="display: block">
+
+      <canvas baseChart [datasets]="ChartData" [labels]="ChartLabels"
+              [options]="ChartOptions" [legend]="ChartLegend" [chartType]="ChartType">
+      </canvas>
+    </div>
+  </div>
+
+  <div *ngIf="op.value=='Visibility'">
+    <div style="display: block">
+
+      <canvas baseChart [datasets]="ChartData" [labels]="ChartLabels"
+              [options]="ChartOptions" [legend]="ChartLegend" [chartType]="ChartType">
+      </canvas>
+    </div>
+  </div>
+
+  <div *ngIf="op.value=='Wind Speed'">
+    <div style="display: block">
+      <canvas baseChart [datasets]="ChartData" [labels]="ChartLabels"
+              [options]="ChartOptions" [legend]="ChartLegend" [chartType]="ChartType">
+      </canvas>
+    </div>
+  </div>
+</div>
+

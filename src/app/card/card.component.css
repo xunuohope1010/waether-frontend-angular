@@ -1,0 +1,54 @@
+.city {
+  font-size: 5vw;
+}
+.temperature{
+  font-size: 7vw;
+}
+.summary{
+  font-size: 6vw;
+  margin-bottom: 70px;
+}
+.state{
+  width: 37vw;
+  margin-top: 55px;
+  margin-left: -10px;
+}
+.weatherIcon{
+  width: 6vw;
+}
+.weatherInfo{
+  font-size: 4vw;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+@media screen and (min-width: 800px) {
+  .city {
+    font-size: 36px;
+    margin-left: 20px;
+  }
+  .temperature{
+    font-size: 45px;
+    margin-left: 20px;
+  }
+  .summary{
+    font-size: 30px;
+    margin-bottom: 40px;
+    margin-left: 20px;
+  }
+  .state{
+    width: 200px;
+    margin-top: 90px;
+    margin-left: 30px;
+  }
+  .weatherIcon{
+    width: 40px;
+  }
+  .weatherInfo{
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-top: 0;
+    text-align: center;
+  }
+}

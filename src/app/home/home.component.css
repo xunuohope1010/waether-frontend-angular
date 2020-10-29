@@ -1,0 +1,58 @@
+.material-icons.orange600 { color: #DC9A01; }
+.chart-bottom{
+  height: 120px;
+}
+.city, .city:visited, .city:hover, .city:hover{
+  color: blue;
+  text-decoration: none;
+}
+
+.weatherModalInfo{
+  margin-left: 20px;
+  font-size: 15px;
+}
+
+@media screen and (min-width: 800px) {
+  .chart-bottom{
+    height: 20px;
+  }
+  .canvasChart{
+    margin-left: -60px;
+    margin-bottom: 30px;
+  }
+  .weatherModalInfo{
+    margin-left: 270px;
+    font-size: 15px;
+  }
+}
+
+.table-striped>thead>tr{
+  background-color: #5B87A5;
+}
+.table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
+  background-color: #92CBF1;
+}
+.table-striped>tbody>tr:nth-child(even)>td, .table-striped>tbody>tr:nth-child(even)>th {
+  background-color: #5B87A5;
+}
+
+.nav-pills .pill-1 .nav-link:not(.active) {
+  background-color: white;
+  color: gray;
+  border: 1px solid black;
+}
+
+/* active (faded) */
+.nav-pills .pill-1 .nav-link {
+  background-color: #5B87A5;
+  color: white;
+  border: 1px solid black;
+}
+.progress-bar{
+  background-color: #1998AE;
+}
+
+.nav-tabs .tab-1 .nav-link:not(.active) {
+  color: black;
+}
+
